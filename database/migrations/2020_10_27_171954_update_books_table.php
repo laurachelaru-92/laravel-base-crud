@@ -13,9 +13,9 @@ class UpdateBooksTable extends Migration
      */
     public function up()
     {
-        // Schema::table('books', function (Blueprint $table) {
-        //     $table->string('name', 50)->change();
-        // });
+        Schema::table('books', function (Blueprint $table) {
+            $table->smallInteger('year')->change();
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class UpdateBooksTable extends Migration
      */
     public function down()
     {
-        // Schema::table('books', function (Blueprint $table) {
-        //     $table->string('name', 50)->change();
-        // });
+        Schema::table('books', function (Blueprint $table) {
+            $table->date('year')->change();
+        });
     }
 }
