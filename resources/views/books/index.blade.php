@@ -20,6 +20,11 @@
                 <li><a href="{{route('books.show', $book->id)}}"><img src="{{$book->image}}" alt="{{$book->title}} cover"></a></li>
                 <li class="edit"><a href="{{route('books.edit', $book->id)}}"><i class="fas fa-edit"></i></a></li>
                 <li class="delete"><a href="#"><i class="far fa-trash-alt"></i></a></li>
+                <li class="confirm_delete d-none">
+                    <h2>Vuoi davvero cancellare questo libro?</h2>
+                    <a href="">Sì</a>
+                    <a href="#" class="delete_no">No</a>
+                </li>
             </ul>
         @endforeach
     </div>
