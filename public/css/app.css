@@ -6163,6 +6163,7 @@ readers do not read off random characters that represent icons */
   border: 5px solid lightblue;
   margin: 0 10px 10px 0;
   text-align: center;
+  max-width: 250px;
 }
 
 #homepage-wrapper #books-container ul li {
@@ -6195,6 +6196,8 @@ readers do not read off random characters that represent icons */
 #homepage-wrapper #books-container ul li.delete {
   bottom: 10px;
   right: 9px;
+  cursor: pointer;
+  color: lightblue;
 }
 
 #homepage-wrapper #books-container ul li.confirm_delete {
@@ -6214,13 +6217,22 @@ readers do not read off random characters that represent icons */
   padding-bottom: 20px;
 }
 
-#homepage-wrapper #books-container ul li.confirm_delete a {
+#homepage-wrapper #books-container ul li.confirm_delete form {
+  display: inline-block;
+}
+
+#homepage-wrapper #books-container ul li.confirm_delete .delete_yes,
+#homepage-wrapper #books-container ul li.confirm_delete .delete_no {
   text-decoration: none;
   padding: 10px 20px;
   margin: 5px;
+  outline: none;
+  border: none;
   border-radius: 10px;
   background-color: #fff;
   color: #000;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 #homepage-wrapper > a {

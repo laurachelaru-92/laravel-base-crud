@@ -40,7 +40,7 @@ class BookController extends Controller
     {
         $book = $request->validate([
             'isbn' => "required|unique:books|max:13",
-            'title' => "required|max:30",
+            'title' => "required|max:70",
             'author' => "required|string|max:50",
             'genre' => "required|string|max:30",
             'edition' => "required|string|max:50",
@@ -105,7 +105,7 @@ class BookController extends Controller
                 "max:13",
                 Rule::unique("books")->ignore($id)
             ],
-            'title' => "required|max:30",
+            'title' => "required|max:70",
             'author' => "required|string|max:50",
             'genre' => "required|string|max:30",
             'edition' => "required|string|max:50",
@@ -137,6 +137,10 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        
+        $book = Book::find($id);
+
+        $book->delete();
+
+        return redirect()->route('books.index');
     }
 }

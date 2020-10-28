@@ -19,11 +19,15 @@
                 <li><strong>Anno di pubblicazione:</strong> {{$book->year}}</li>
                 <li><a href="{{route('books.show', $book->id)}}"><img src="{{$book->image}}" alt="{{$book->title}} cover"></a></li>
                 <li class="edit"><a href="{{route('books.edit', $book->id)}}"><i class="fas fa-edit"></i></a></li>
-                <li class="delete"><a href="#"><i class="far fa-trash-alt"></i></a></li>
+                <li class="delete"><i class="far fa-trash-alt"></i></li>
                 <li class="confirm_delete d-none">
                     <h2>Vuoi davvero cancellare questo libro?</h2>
-                    <a href="">Sì</a>
-                    <a href="#" class="delete_no">No</a>
+                    <form action="{{route('books.destroy', $book->id)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input class="delete_yes" type="submit" value="Sì">
+                    </form>
+                    <button class="delete_no">No</button>
                 </li>
             </ul>
         @endforeach
