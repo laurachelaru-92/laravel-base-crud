@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Book;
+use Illuminate\Validation\Rule;
 
 class BookController extends Controller
 {
@@ -37,17 +38,15 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $book = $request->all();
-
-        $request->validate([
-            "isbn" => "required|unique:books|max:13",
-            "title" => "required|max:30",
-            "author" => "required|string|max:50",
-            "genre" => "required|string|max:30",
-            "edition" => "required|string|max:50",
-            "pages" => "required|integer|",
-            "image" => "required",
-            "year" => "required|integer|max:4"
+        $book = $request->validate([
+            'isbn' => "required|unique:books|max:13",
+            'title' => "required|max:30",
+            'author' => "required|string|max:50",
+            'genre' => "required|string|max:30",
+            'edition' => "required|string|max:50",
+            'pages' => "required|integer|",
+            'image' => "required",
+            'year' => "required|integer"
         ]);
 
         $bookNew = new Book;
@@ -73,7 +72,6 @@ class BookController extends Controller
      */
     public function show($id)
     {
-
         $book = Book::find($id);
 
         return view("books.single_book", ["book" => $book]);
@@ -87,7 +85,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::find($id);
+
+        return view("books.edit", ["book" => $book]);
     }
 
     /**
@@ -99,7 +99,34 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate([
+            'isbn' => [
+                "required",
+                "max:13",
+                Rule::unique("books")->ignore($id)
+            ],
+            'title' => "required|max:30",
+            'author' => "required|string|max:50",
+            'genre' => "required|string|max:30",
+            'edition' => "required|string|max:50",
+            'pages' => "required|integer|",
+            'image' => "required",
+            'year' => "required|integer"
+        ]);
+
+        $book = Book::find($id);
+        $book->isbn = $data["isbn"];
+        $book->title = $data["title"];
+        $book->author = $data["author"];
+        $book->genre = $data["genre"];
+        $book->edition = $data["edition"];
+        $book->pages = $data["pages"];
+        $book->image = $data["image"];
+        $book->year = $data["year"];
+
+        $book->update();
+
+        return redirect()->route("books.index");
     }
 
     /**

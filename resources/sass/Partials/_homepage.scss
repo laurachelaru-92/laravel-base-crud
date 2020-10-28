@@ -7,11 +7,13 @@
 
     #books-container {
         display: flex;
+        flex-wrap: wrap;
 
         ul {
+            position: relative;
             list-style: none;
             border: 5px solid lightblue;
-            margin-right: 10px;
+            margin: 0 10px 10px 0;
             text-align: center;
             
             li {
@@ -22,17 +24,39 @@
                     width: 150px;
                     height: auto;
                 }
+
+                &.edit, &.delete {
+                    text-decoration: none;
+                    position: absolute;
+                    right: 0;
+                    padding: 0;
+
+                    a {
+                        color: lightblue;
+                    }
+                }
+
+                &.edit {
+                    bottom: 30px;
+                    right: 5px;
+                }
+
+                &.delete {
+                    bottom: 10px;
+                    right: 9px;
+                }
             }
         }
     }
 
-    a {
+    > a {
         text-decoration: none;
         color: #000;
         display: inline-block;
         margin: 20px;
         padding: 20px;
         background-color: lightgrey;
-        border-radius: 7px;
+        border-radius: 15px;
+        font-weight: bold;
     }
 }

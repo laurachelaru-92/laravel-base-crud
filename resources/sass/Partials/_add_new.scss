@@ -1,4 +1,4 @@
-#create-wrapper {
+#create-wrapper, #edit-wrapper {
     padding: 50px;
 
     h1 {
@@ -6,7 +6,7 @@
     }
 
     form {
-        width: 70%;
+        width: 400px;
 
         > div {
 
@@ -42,5 +42,14 @@
             cursor: pointer;
         }
     }
+}
 
+#edit-wrapper {
+
+    form {
+               
+        input[type="submit"] {
+            background-color: violet;
+        }
+    }
 }

@@ -10,14 +10,16 @@
     <div id="books-container">
         @foreach($books as $book)
             <ul>
-                <li>ISBN: {{$book->isbn}}</li>
-                <li>Titolo: {{$book->title}}</li>
-                <li>Autore: {{$book->author}}</li>
-                <li>Genere: {{$book->genre}}</li>
-                <li>Editore: {{$book->edition}}</li>
-                <li>Nr. pagine: {{$book->pages}}</li>
-                <li>Anno di pubblicazione: {{$book->year}}</li>
-                <li><img src="{{$book->image}}" alt="{{$book->title}} cover"></li>
+                <li><strong>ISBN:</strong> {{$book->isbn}}</li>
+                <li><strong>Titolo:</strong> {{$book->title}}</li>
+                <li><strong>Autore:</strong> {{$book->author}}</li>
+                <li><strong>Genere:</strong> {{$book->genre}}</li>
+                <li><strong>Editore:</strong> {{$book->edition}}</li>
+                <li><strong>Nr. pagine:</strong> {{$book->pages}}</li>
+                <li><strong>Anno di pubblicazione:</strong> {{$book->year}}</li>
+                <li><a href="{{route('books.show', $book->id)}}"><img src="{{$book->image}}" alt="{{$book->title}} cover"></a></li>
+                <li class="edit"><a href="{{route('books.edit', $book->id)}}"><i class="fas fa-edit"></i></a></li>
+                <li class="delete"><a href="#"><i class="far fa-trash-alt"></i></a></li>
             </ul>
         @endforeach
     </div>
