@@ -1,0 +1,46 @@
+#create-wrapper {
+    padding: 50px;
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    form {
+        width: 70%;
+
+        > div {
+
+            label {
+                float:left;
+                padding: 5px;
+            }
+            
+            input {
+                float: right;
+                margin: 2px;
+                padding: 3px;
+                border: 1px solid #000;
+                border-radius: 7px;
+                outline: none;
+
+            }
+
+            &::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: lightblue;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+}

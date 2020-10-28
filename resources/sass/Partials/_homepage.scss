@@ -1,0 +1,38 @@
+#homepage-wrapper {
+    padding: 50px;
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    #books-container {
+        display: flex;
+
+        ul {
+            list-style: none;
+            border: 5px solid lightblue;
+            margin-right: 10px;
+            text-align: center;
+            
+            li {
+                padding: 5px 10px;
+
+
+                img {
+                    width: 150px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+        display: inline-block;
+        margin: 20px;
+        padding: 20px;
+        background-color: lightgrey;
+        border-radius: 7px;
+    }
+}

@@ -7,13 +7,13 @@
 @section('page_content')
 <div id="single-book-wrapper">    
     <ul>
-        <li>ISBN: {{$book->isbn}}</li>
-        <li>Titolo: {{$book->title}}</li>
-        <li>Autore: {{$book->author}}</li>
-        <li>Genere: {{$book->genre}}</li>
-        <li>Editore: {{$book->edition}}</li>
-        <li>Nr. pagine: {{$book->pages}}</li>
-        <li>Anno di pubblicazione: {{$book->year}}</li>
+        <li id="titolo"><strong>Titolo:</strong> {{$book->title}}</li>
+        <li><strong>ISBN:</strong> {{$book->isbn}}</li>
+        <li><strong>Autore:</strong> {{$book->author}}</li>
+        <li><strong>Genere:</strong> {{$book->genre}}</li>
+        <li><strong>Editore:</strong> {{$book->edition}}</li>
+        <li><strong>Nr. pagine:</strong> {{$book->pages}}</li>
+        <li><strong>Anno di pubblicazione:</strong> {{$book->year}}</li>
         <li><img src="{{$book->image}}" alt="{{$book->title}} cover"></li>
     </ul>
 </div>

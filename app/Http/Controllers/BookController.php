@@ -39,6 +39,17 @@ class BookController extends Controller
     {
         $book = $request->all();
 
+        $request->validate([
+            "isbn" => "required|unique:books|max:13",
+            "title" => "required|max:30",
+            "author" => "required|string|max:50",
+            "genre" => "required|string|max:30",
+            "edition" => "required|string|max:50",
+            "pages" => "required|integer|",
+            "image" => "required",
+            "year" => "required|integer|max:4"
+        ]);
+
         $bookNew = new Book;
         $bookNew->isbn = $book["isbn"];
         $bookNew->title = $book["title"];

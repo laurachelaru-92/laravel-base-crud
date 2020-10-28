@@ -1,9 +1,112 @@
+#homepage-wrapper {
+  padding: 50px;
+}
+
+#homepage-wrapper h1 {
+  margin-bottom: 30px;
+}
+
+#homepage-wrapper #books-container {
+  display: flex;
+}
+
+#homepage-wrapper #books-container ul {
+  list-style: none;
+  border: 5px solid lightblue;
+  margin-right: 10px;
+  text-align: center;
+}
+
+#homepage-wrapper #books-container ul li {
+  padding: 5px 10px;
+}
+
+#homepage-wrapper #books-container ul li img {
+  width: 150px;
+  height: auto;
+}
+
+#homepage-wrapper a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  background-color: lightgrey;
+  border-radius: 7px;
+}
+
+#create-wrapper {
+  padding: 50px;
+}
+
+#create-wrapper h1 {
+  margin-bottom: 30px;
+}
+
+#create-wrapper form {
+  width: 70%;
+}
+
+#create-wrapper form > div label {
+  float: left;
+  padding: 5px;
+}
+
+#create-wrapper form > div input {
+  float: right;
+  margin: 2px;
+  padding: 3px;
+  border: 1px solid #000;
+  border-radius: 7px;
+  outline: none;
+}
+
+#create-wrapper form > div::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#create-wrapper form input[type=submit] {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightblue;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 #single-book-wrapper {
   background-color: lightblue;
+  padding: 50px;
+}
+
+#single-book-wrapper ul {
+  list-style: none;
+}
+
+#single-book-wrapper ul li {
+  padding: 5px 10px;
+}
+
+#single-book-wrapper ul li img {
+  width: 150px;
+  height: auto;
+}
+
+#single-book-wrapper ul li#titolo {
+  font-size: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: red;
 }
 
