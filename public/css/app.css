@@ -6160,10 +6160,12 @@ readers do not read off random characters that represent icons */
 #homepage-wrapper #books-container ul {
   position: relative;
   list-style: none;
-  border: 5px solid lightblue;
+  border: 10px solid grey;
+  border-radius: 10px;
   margin: 0 10px 10px 0;
   text-align: center;
   max-width: 250px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #homepage-wrapper #books-container ul li {
@@ -6185,7 +6187,7 @@ readers do not read off random characters that represent icons */
 
 #homepage-wrapper #books-container ul li.edit a,
 #homepage-wrapper #books-container ul li.delete a {
-  color: lightblue;
+  color: grey;
 }
 
 #homepage-wrapper #books-container ul li.edit {
@@ -6197,7 +6199,7 @@ readers do not read off random characters that represent icons */
   bottom: 10px;
   right: 9px;
   cursor: pointer;
-  color: lightblue;
+  color: grey;
 }
 
 #homepage-wrapper #books-container ul li.confirm_delete {
@@ -6237,11 +6239,11 @@ readers do not read off random characters that represent icons */
 
 #homepage-wrapper > a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   display: inline-block;
   margin: 20px;
   padding: 20px;
-  background-color: lightgrey;
+  background-color: grey;
   border-radius: 15px;
   font-weight: bold;
 }
@@ -6331,6 +6333,10 @@ readers do not read off random characters that represent icons */
 
 body {
   font-family: "Roboto", sans-serif;
+  background-image: url(/images/bg-index.webp?d8b1c502e6e82c60e29001e6a3e3720d);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .d-none {

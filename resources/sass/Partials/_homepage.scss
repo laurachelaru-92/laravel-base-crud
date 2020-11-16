@@ -1,5 +1,9 @@
 #homepage-wrapper {
     padding: 50px;
+    // background-image: url('../img/bg-index.webp');
+    // background-size: cover;
+    // background-position: center center;
+    // background-attachment: fixed;
 
     h1 {
         margin-bottom: 30px;
@@ -12,10 +16,12 @@
         ul {
             position: relative;
             list-style: none;
-            border: 5px solid lightblue;
+            border: 10px solid grey;
+            border-radius: 10px;
             margin: 0 10px 10px 0;
             text-align: center;
             max-width: 250px;
+            background-color: rgba(255,255,255,0.8);
             
             li {
                 padding: 5px 10px;
@@ -33,7 +39,7 @@
                     padding: 0;
 
                     a {
-                        color: lightblue;
+                        color: grey;
                     }
                 }
 
@@ -46,7 +52,7 @@
                     bottom: 10px;
                     right: 9px;
                     cursor: pointer;
-                    color: lightblue;
+                    color: grey;
                 }
 
                 &.confirm_delete {
@@ -89,11 +95,11 @@
 
     > a {
         text-decoration: none;
-        color: #000;
+        color: #fff;
         display: inline-block;
         margin: 20px;
         padding: 20px;
-        background-color: lightgrey;
+        background-color: grey;
         border-radius: 15px;
         font-weight: bold;
     }
